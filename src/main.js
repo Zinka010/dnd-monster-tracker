@@ -19,9 +19,28 @@ function saveNotes(notes) {
 }
 
 function createNoteElement(id, content) {
-  const element = document.createElement("textarea");
-
+  const element = document.createElement("div");
   element.classList.add("note");
+
+  const newContent = document.createElement("textarea");
+  newContent.classList.add("note-text-box");
+
+  const newContent2 = document.createElement("button");
+  newContent2.innerHTML = "HEAL";
+  newContent2.classList.add("note-heal");
+
+  const newContent3 = document.createElement("textarea");
+  newContent3.classList.add("note-health-points");
+
+  const newContent4 = document.createElement("button");
+  newContent4.innerHTML = "DMG";
+  newContent4.classList.add("note-damage");
+
+  element.appendChild(newContent);
+  element.appendChild(newContent2);
+  element.appendChild(newContent3);
+  element.appendChild(newContent4);
+
   element.value = content;
   element.placeholder = "Empty Sticky Note";
 

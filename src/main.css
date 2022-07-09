@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background: #79bcfe;
+  font: Verdana, Arial, sans-serif;
 }
 
 #app {
@@ -21,6 +22,7 @@ body {
   resize: none;
   font-family: sans-serif;
   font-size: 16px;
+
 }
 
 .add-note-container {
@@ -42,11 +44,56 @@ body {
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: background 0.2s;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+}
+
+.note-text-box {
+  height: 10%;
+  width: 100%;
+  font-size: 20px;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.note-health-points{
+  height: 10%;
+  width: 30%;
+  font-size: 20px;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  /* margin-left: 2%;
+  margin-right: 2%; */
+  border: none;
+}
+
+.note-heal {
+  height: 10%;
+  width: 30%;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.07);
+  /* display: inline-block; */
+  vertical-align: top;
+}
+
+.note-damage {
+  height: 10%;
+  font-size: 20px;
+  vertical-align: top;
+  border: 1px solid black;
+  width: 30%;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.07);
+  display: inline-block;
+}
+
+.note-heal:hover {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+
+.note-damage:hover {
+  background-color: rgba(0, 0, 0, 0.14);
 }
 
 .add-note:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
