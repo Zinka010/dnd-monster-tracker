@@ -22,8 +22,25 @@ function createNoteElement(id, content) {
   const element = document.createElement("div");
   element.classList.add("note");
 
-  const newContent = document.createElement("textarea");
-  newContent.classList.add("note-text-box");
+  const newContent = document.createElement("div");
+  newContent.classList.add("note-text-box-div");
+
+  const monsterName = document.createElement("textarea");
+  monsterName.classList.add("note-monster-title")
+
+  const monsterCurrentHealth = document.createElement("textarea");
+  monsterCurrentHealth.classList.add("note-health");
+
+  const slash = document.createElement("textarea");
+  slash.classList.add("note-slash");
+  slash.innerHTML = "/";
+  slash.readOnly = true;
+
+  const monsterMaxHealth = document.createElement("textarea");
+  monsterMaxHealth.classList.add("note-health");
+
+  const infoBar = document.createElement("div");
+  infoBar.classList.add("note-info-bar");
 
   const newContent2 = document.createElement("button");
   newContent2.innerHTML = "HEAL";
@@ -31,15 +48,30 @@ function createNoteElement(id, content) {
 
   const newContent3 = document.createElement("textarea");
   newContent3.classList.add("note-health-points");
+  newContent3.maxLength = "8";
 
   const newContent4 = document.createElement("button");
   newContent4.innerHTML = "DMG";
   newContent4.classList.add("note-damage");
 
+  const textArea = document.createElement("textarea");
+  textArea.classList.add("note-general-text");
+
+  newContent.appendChild(monsterName);
+  newContent.appendChild(monsterCurrentHealth);
+  newContent.appendChild(slash);
+  newContent.appendChild(monsterMaxHealth);
   element.appendChild(newContent);
-  element.appendChild(newContent2);
-  element.appendChild(newContent3);
-  element.appendChild(newContent4);
+
+  infoBar.appendChild(newContent2);
+  infoBar.appendChild(newContent3);
+  infoBar.appendChild(newContent4);
+
+  element.appendChild(infoBar);
+
+  element.appendChild(textArea);
+
+ 
 
   element.value = content;
   element.placeholder = "Empty Sticky Note";
