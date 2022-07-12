@@ -118,13 +118,25 @@ body {
 }
 
 .note-general-text {
-  height: 75%;
+  height: 65%;
   width: 100%;
   resize: none;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.07);
   margin-top: 5%;
   font-size: 18px;
+}
+
+.note-delete-icon {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.note-trash-wrapper {
+  display: flex;
+  height: 10%;
+  justify-content: right;
 }
 
 .note-slash:focus {
@@ -142,4 +154,8 @@ body {
 
 .add-note:hover {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.note-delete-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }

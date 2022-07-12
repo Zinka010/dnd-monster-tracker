@@ -62,16 +62,13 @@ function createNoteHeader() {
   return noteHeader;
 }
 
-function createNoteElement() {
-  const element = document.createElement("div");
-  element.classList.add("note");
-
+function createNoteInfoBar() {
   const infoBar = document.createElement("div");
   infoBar.classList.add("note-info-bar");
 
-  const newContent2 = document.createElement("button");
-  newContent2.innerHTML = "HEAL";
-  newContent2.classList.add("note-heal");
+  const healButton = document.createElement("button");
+  healButton.innerHTML = "HEAL";
+  healButton.classList.add("note-heal");
 
   const noteHealthPoints = document.createElement("textarea");
   noteHealthPoints.classList.add("note-health-points");
@@ -83,26 +80,33 @@ function createNoteElement() {
     checkInput(noteHealthPoints);
   });
 
-  const newContent4 = document.createElement("button");
-  newContent4.innerHTML = "DMG";
-  newContent4.classList.add("note-damage");
+  const damageButton = document.createElement("button");
+  damageButton.innerHTML = "DMG";
+  damageButton.classList.add("note-damage");
+
+  infoBar.appendChild(healButton);
+  infoBar.appendChild(noteHealthPoints);
+  infoBar.appendChild(damageButton);
+
+  return infoBar;
+}
+
+function createNoteElement(id, content) {
+  const element = document.createElement("div");
+  element.classList.add("note");
 
   const monsterGeneralNotes = document.createElement("textarea");
   monsterGeneralNotes.classList.add("note-general-text");
   monsterGeneralNotes.id = "monsterGeneralNotes";
 
-
   noteHeader = createNoteHeader();
   element.appendChild(noteHeader);
 
-  infoBar.appendChild(newContent2);
-  infoBar.appendChild(noteHealthPoints);
-  infoBar.appendChild(newContent4);
+  infoBar = createNoteInfoBar();
 
   element.appendChild(infoBar);
 
   element.appendChild(monsterGeneralNotes);
-
 
   element.addEventListener("keyup", () => {
     var obj = {
@@ -112,6 +116,22 @@ function createNoteElement() {
       "monsterGeneralNotes": document.getElementById("monsterGeneralNotes").value
     };
     console.log(obj);
+  });
+
+
+  const deleteButtonWrapper = document.createElement("div");
+  deleteButtonWrapper.classList.add("note-trash-wrapper");
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("note-delete-icon");
+  const deleteIcon = document.createElement("img");
+  deleteIcon.src = "/src/resources/trash.svg";
+  deleteButton.appendChild(deleteIcon);
+
+  deleteButtonWrapper.appendChild(deleteButton);
+  element.appendChild(deleteButtonWrapper);
+
+  deleteButton.addEventListener("click", () => {
+    deleteNote(id, element);
   });
 
   return element;
