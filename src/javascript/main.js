@@ -3,18 +3,20 @@ const addNoteContainer = notesContainer.querySelector(".add-note-container");
 const addNoteButton = addNoteContainer.querySelector(".add-note")
 
 getNotes().forEach((note) => {
-  const noteElement = createNoteElement(note.id, note.content);
+  const noteElement = createNoteElement(note.id, note);
   notesContainer.insertBefore(noteElement, addNoteContainer);
 });
 
 addNoteButton.addEventListener("click", () => addNote());
 
 function getNotes() {
-  return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]");
+  console.log(localStorage.getItem("stickynotes-notes"));
+  return JSON.parse("[]");
 }
 
 function saveNotes(notes) {
-  localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
+  console.log(notes);
+  localStorage.setItem("stickynotes-notes", notes);
 }
 
 function createNoteHeader() {
@@ -91,7 +93,7 @@ function createNoteInfoBar() {
   return infoBar;
 }
 
-function createNoteElement(id, content) {
+function createNoteElement(id, noteObject) {
   const element = document.createElement("div");
   element.classList.add("note");
 
@@ -109,15 +111,16 @@ function createNoteElement(id, content) {
   element.appendChild(monsterGeneralNotes);
 
   element.addEventListener("keyup", () => {
-    var obj = {
+    var newNoteObject = {
       "monsterName": document.getElementById("monsterName").value,
       "monsterCurrentHealth": document.getElementById("monsterCurrentHealth").value,
       "monsterMaxHealth": document.getElementById("monsterMaxHealth").value,
       "monsterGeneralNotes": document.getElementById("monsterGeneralNotes").value
     };
-    console.log(obj);
+    
+    updateNote(id, newNoteObject);
+    //console.log(noteObject);
   });
-
 
   const deleteButtonWrapper = document.createElement("div");
   deleteButtonWrapper.classList.add("note-trash-wrapper");
@@ -141,21 +144,27 @@ function addNote() {
   const notes = getNotes();
   const noteObject = {
     id: Math.floor(Math.random() * 100000),
-    content: ""
+    "monsterName": "GOO",
+    "monsterCurrentHealth": "DPP",
+    "monsterMaxHealth": "AAS",
+    "monsterGeneralNotes": "SDFSD"
   };
 
-  const noteElement = createNoteElement(noteObject.id, noteObject.content);
+  const noteElement = createNoteElement(noteObject.id, noteObject);
   notesContainer.insertBefore(noteElement, addNoteContainer);
 
   notes.push(noteObject);
   saveNotes(notes);
 }
 
-function updateNote(id, newContent) {
+function updateNote(id, newNoteObject) {
   const notes = getNotes();
   const targetNote = notes.filter((note) => note.id == id)[0];
 
-  targetNote.content = newContent;
+  targetNote.monsterName = newNoteObject.monsterName;
+  targetNote.monsterCurrentHealth = newNoteObject.monsterCurrentHealth;
+  targetNote.monsterMaxHealth = newNoteObject.monsterMaxHealth;
+  targetNote.monsterGeneralNotes = newNoteObject.monsterGeneralNotes;
   saveNotes(notes);
 }
 
