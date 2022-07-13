@@ -7,16 +7,10 @@ function createNoteHeader(noteObject, monsterName, monsterCurrentHealth, monster
   monsterName.maxLength = "12";
   monsterName.innerHTML = noteObject.monsterName;
 
+  monsterCurrentHealth.type = "number";
   monsterCurrentHealth.id = "monsterCurrentHealth";
   monsterCurrentHealth.classList.add("note-health");
-  monsterCurrentHealth.maxLength = "3";
-  monsterCurrentHealth.addEventListener("keydown", () => {
-    checkInput(monsterCurrentHealth);
-  });
-  monsterCurrentHealth.addEventListener("keyup", () => {
-    checkInput(monsterCurrentHealth);
-  });
-  monsterCurrentHealth.innerHTML = noteObject.monsterCurrentHealth;
+  monsterCurrentHealth.value = noteObject.monsterCurrentHealth;
 
   const slash = document.createElement("textarea");
   slash.classList.add("note-slash");
@@ -24,16 +18,10 @@ function createNoteHeader(noteObject, monsterName, monsterCurrentHealth, monster
   slash.readOnly = true;
   slash.tabIndex = "-1";
 
+  monsterMaxHealth.type = "number";
   monsterMaxHealth.id = "monsterMaxHealth";
   monsterMaxHealth.classList.add("note-health");
-  monsterMaxHealth.maxLength = "3";
-  monsterMaxHealth.addEventListener("keydown", () => {
-    checkInput(monsterMaxHealth);
-  });
-  monsterMaxHealth.addEventListener("keyup", () => {
-    checkInput(monsterMaxHealth);
-  });
-  monsterMaxHealth.innerHTML = noteObject.monsterMaxHealth;
+  monsterMaxHealth.value = noteObject.monsterMaxHealth;
 
   noteHeader.appendChild(monsterName);
   noteHeader.appendChild(monsterCurrentHealth);
@@ -61,14 +49,9 @@ function createNoteInfoBar(id, monsterHealthChange, monsterCurrentHealth) {
     }
   });
 
+  monsterHealthChange.type = "number";
   monsterHealthChange.classList.add("note-health-points");
   monsterHealthChange.maxLength = "3";
-  monsterHealthChange.addEventListener("keydown", () => {
-    checkInput(monsterHealthChange);
-  });
-  monsterHealthChange.addEventListener("keyup", () => {
-    checkInput(monsterHealthChange);
-  });
 
   const damageButton = document.createElement("button");
   damageButton.innerHTML = "DMG";
@@ -109,13 +92,13 @@ function createNoteElement(id, noteObject) {
   monsterGeneralNotes.innerHTML = noteObject.monsterGeneralNotes;
 
   const monsterName = document.createElement("textarea");
-  const monsterCurrentHealth = document.createElement("textarea");
-  const monsterMaxHealth = document.createElement("textarea");
+  const monsterCurrentHealth = document.createElement("input");
+  const monsterMaxHealth = document.createElement("input");
 
   noteHeader = createNoteHeader(noteObject, monsterName, monsterCurrentHealth, monsterMaxHealth);
   element.appendChild(noteHeader);
 
-  const monsterHealthChange = document.createElement("textarea");
+  const monsterHealthChange = document.createElement("input");
   infoBar = createNoteInfoBar(id, monsterHealthChange, monsterCurrentHealth);
 
   element.appendChild(infoBar);

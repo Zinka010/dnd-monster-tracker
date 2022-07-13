@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   margin: 0;
   background: #79bcfe;
@@ -107,6 +119,7 @@ body {
   resize: none;
   background-color: rgba(0, 0, 0, 0.07);
   font-size: 24px;
+  border: solid black 1px;
 }
 
 .note-slash {
