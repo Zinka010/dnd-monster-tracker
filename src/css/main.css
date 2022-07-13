@@ -105,6 +105,7 @@ body {
   font-size: 12px;
   vertical-align: top;
   background-color: rgba(255, 4, 4, 0.7);
+  border: 1px solid black;
 }
 
 .note-info-bar {
@@ -129,6 +130,8 @@ body {
   resize: none;
   background-color: rgba(0, 0, 0, 0.07);
   font-size: 24px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .note-general-text {
