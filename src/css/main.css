@@ -5,6 +5,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
@@ -12,7 +13,7 @@ input[type=number] {
 
 body {
   margin: 0;
-  background: #79bcfe;
+  background: #b0d5fa;
   font: Verdana, Arial, sans-serif;
 }
 
