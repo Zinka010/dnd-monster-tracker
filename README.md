@@ -1,5 +1,5 @@
 # dnd-monster-tracker
 
-DnD Monster Track aims to make TTRPG encounters much simpler to manage. Easily create monsters, track their HP and keep individual notes about their ongoing effects.
+D&D Monster Tracker aims to make TTRPG encounters much simpler to manage. Easily create monsters, track their HP and keep individual notes about their ongoing effects.
 
 Inital release is expected in the coming weeks.
