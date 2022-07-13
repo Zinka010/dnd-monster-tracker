@@ -17,157 +17,29 @@ function saveNotes(notes) {
   localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
 }
 
-function createNoteHeader(noteObject) {
-  const noteHeader = document.createElement("div");
-  noteHeader.classList.add("note-text-box-div");
+document.addEventListener("DOMContentLoaded", () => {
+  const noteObject = {
+    id: Math.floor(Math.random() * 100000),
+    "monsterName": "Demogorgon",
+    "monsterCurrentHealth": "265",
+    "monsterMaxHealth": "350  ",
+    "monsterGeneralNotes": "Stranger Things reference!"
+  };
 
-  const monsterName = document.createElement("textarea");
-  monsterName.id = "monsterName";
-  monsterName.classList.add("note-monster-title");
-  monsterName.maxLength = "12";
-  monsterName.innerHTML = noteObject.monsterName;
+  if (getNotes().length == 0) {
+    addInitialNote(noteObject);
+  }
+});
 
-  const monsterCurrentHealth = document.createElement("textarea");
-  monsterCurrentHealth.id = "monsterCurrentHealth";
-  monsterCurrentHealth.classList.add("note-health");
-  monsterCurrentHealth.maxLength = "3";
-  monsterCurrentHealth.addEventListener("keydown", () => {
-    checkInput(monsterCurrentHealth);
-  });
-  monsterCurrentHealth.addEventListener("keyup", () => {
-    checkInput(monsterCurrentHealth);
-  });
-  monsterCurrentHealth.innerHTML = noteObject.monsterCurrentHealth;
+function addInitialNote(noteObject) {
+  const notes = getNotes();
 
-  const slash = document.createElement("textarea");
-  slash.classList.add("note-slash");
-  slash.innerHTML = "/";
-  slash.readOnly = true;
-  slash.tabIndex = "-1";
+  const noteElement = createNoteElement(noteObject.id, noteObject);
+  notesContainer.insertBefore(noteElement, addNoteContainer);
 
-  const monsterMaxHealth = document.createElement("textarea");
-  monsterMaxHealth.id = "monsterMaxHealth";
-  monsterMaxHealth.classList.add("note-health");
-  monsterMaxHealth.maxLength = "3";
-  monsterMaxHealth.addEventListener("keydown", () => {
-    checkInput(monsterMaxHealth);
-  });
-  monsterMaxHealth.addEventListener("keyup", () => {
-    checkInput(monsterMaxHealth);
-  });
-  monsterMaxHealth.innerHTML = noteObject.monsterMaxHealth;
-
-  noteHeader.appendChild(monsterName);
-  noteHeader.appendChild(monsterCurrentHealth);
-  noteHeader.appendChild(slash);
-  noteHeader.appendChild(monsterMaxHealth);
-
-  return noteHeader;
+  notes.push(noteObject);
+  saveNotes(notes);
 }
-
-function createNoteInfoBar() {
-  const infoBar = document.createElement("div");
-  infoBar.classList.add("note-info-bar");
-
-  const healButton = document.createElement("button");
-  healButton.innerHTML = "HEAL";
-  healButton.classList.add("note-heal");
-
-  const noteHealthPoints = document.createElement("textarea");
-  noteHealthPoints.classList.add("note-health-points");
-  noteHealthPoints.maxLength = "3";
-  noteHealthPoints.addEventListener("keydown", () => {
-    checkInput(noteHealthPoints);
-  });
-  noteHealthPoints.addEventListener("keyup", () => {
-    checkInput(noteHealthPoints);
-  });
-
-  const damageButton = document.createElement("button");
-  damageButton.innerHTML = "DMG";
-  damageButton.classList.add("note-damage");
-
-  infoBar.appendChild(healButton);
-  infoBar.appendChild(noteHealthPoints);
-  infoBar.appendChild(damageButton);
-
-  return infoBar;
-}
-
-function createNoteElement(id, noteObject) {
-  const element = document.createElement("div");
-  element.classList.add("note");
-
-  const monsterGeneralNotes = document.createElement("textarea");
-  monsterGeneralNotes.classList.add("note-general-text");
-  monsterGeneralNotes.id = "monsterGeneralNotes";
-  monsterGeneralNotes.innerHTML = noteObject.monsterGeneralNotes;
-
-  noteHeader = createNoteHeader(noteObject);
-  element.appendChild(noteHeader);
-
-  infoBar = createNoteInfoBar();
-
-  element.appendChild(infoBar);
-
-  element.appendChild(monsterGeneralNotes);
-
-  element.addEventListener("keyup", () => {
-    var newNoteObject = {
-      "monsterName": document.getElementById("monsterName").value,
-      "monsterCurrentHealth": document.getElementById("monsterCurrentHealth").value,
-      "monsterMaxHealth": document.getElementById("monsterMaxHealth").value,
-      "monsterGeneralNotes": document.getElementById("monsterGeneralNotes").value
-    };
-
-    newNoteObject["foo"] = "bar";
-
-    console.log(newNoteObject);
-    
-    updateNote(id, newNoteObject);
-  });
-
-  const deleteButtonWrapper = document.createElement("div");
-  deleteButtonWrapper.classList.add("note-trash-wrapper");
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("note-delete-icon");
-  const deleteIcon = document.createElement("img");
-  deleteIcon.src = "/src/resources/trash.svg";
-  deleteButton.appendChild(deleteIcon);
-
-  deleteButtonWrapper.appendChild(deleteButton);
-  element.appendChild(deleteButtonWrapper);
-
-  deleteButton.addEventListener("click", () => {
-    deleteNote(id, element);
-  });
-
-  return element;
-}
-
-// document.addEventListener("DOMContentLoaded", () => {
-  // const noteObject = {
-  //   id: Math.floor(Math.random() * 100000),
-  //   "monsterName": "Demogorgon",
-  //   "monsterCurrentHealth": "265",
-  //   "monsterMaxHealth": "350  ",
-  //   "monsterGeneralNotes": "Stranger Things reference!"
-  // };
-
-  // if (getNotes().length == 0) {
-  //   addInitialNote(noteObject);
-  // }
-// });
-
-// function addInitialNote(noteObject) {
-//   const notes = getNotes();
-
-//   const noteElement = createNoteElement(noteObject.id, noteObject);
-//   notesContainer.insertBefore(noteElement, addNoteContainer);
-
-//   notes.push(noteObject);
-//   saveNotes(notes);
-// }
 
 function addNote() {
   const notes = getNotes();
@@ -203,12 +75,5 @@ function deleteNote(id, element) {
 
   saveNotes(notes);
   notesContainer.removeChild(element);
-}
-
-function checkInput(ob) {
-  var invalidChars = /[^0-9]/gi;
-  if(invalidChars.test(ob.value)) {
-    ob.value = ob.value.replace(invalidChars,"");
-  }
 }
 
