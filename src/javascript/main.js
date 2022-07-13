@@ -70,6 +70,14 @@ function updateNote(id, newNoteObject) {
   saveNotes(notes);
 }
 
+function updateNoteCurrentHealth(id, health) {
+  const notes = getNotes();
+  const targetNote = notes.filter((note) => note.id == id)[0];
+
+  targetNote.monsterCurrentHealth = health;
+  saveNotes(notes);
+}
+
 function deleteNote(id, element) {
   const notes = getNotes().filter((note) => note.id != id);
 

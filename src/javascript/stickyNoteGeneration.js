@@ -43,7 +43,7 @@ function createNoteHeader(noteObject, monsterName, monsterCurrentHealth, monster
   return noteHeader;
 }
 
-function createNoteInfoBar(monsterHealthChange, monsterCurrentHealth, id) {
+function createNoteInfoBar(id, monsterHealthChange, monsterCurrentHealth) {
   const infoBar = document.createElement("div");
   infoBar.classList.add("note-info-bar");
 
@@ -57,6 +57,7 @@ function createNoteInfoBar(monsterHealthChange, monsterCurrentHealth, id) {
       console.log("IF STATEMENT");
       var newHealth = parseInt(monsterCurrentHealth.value) + change;
       monsterCurrentHealth.value = newHealth;
+      updateNoteCurrentHealth(id, newHealth);
     }
   });
 
@@ -76,9 +77,9 @@ function createNoteInfoBar(monsterHealthChange, monsterCurrentHealth, id) {
   damageButton.addEventListener("click", () => {
     var change = getMonsterHealthChangeValue(monsterHealthChange);
     if (change != 0 && monsterCurrentHealth.value != "") {
-      console.log("IF STATEMENT");
       var newHealth = parseInt(monsterCurrentHealth.value) - change;
       monsterCurrentHealth.value = newHealth;
+      updateNoteCurrentHealth(id, newHealth);
     }
   });
 
@@ -115,7 +116,7 @@ function createNoteElement(id, noteObject) {
   element.appendChild(noteHeader);
 
   const monsterHealthChange = document.createElement("textarea");
-  infoBar = createNoteInfoBar(monsterHealthChange, monsterCurrentHealth, id);
+  infoBar = createNoteInfoBar(id, monsterHealthChange, monsterCurrentHealth);
 
   element.appendChild(infoBar);
 
