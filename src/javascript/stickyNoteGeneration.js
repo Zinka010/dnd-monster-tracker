@@ -52,6 +52,7 @@ function createNoteInfoBar(id, monsterHealthChange, monsterCurrentHealth) {
   monsterHealthChange.type = "number";
   monsterHealthChange.classList.add("note-health-points");
   monsterHealthChange.maxLength = "3";
+  monsterHealthChange.placeholder = "amount";
 
   const damageButton = document.createElement("button");
   damageButton.innerHTML = "DMG";

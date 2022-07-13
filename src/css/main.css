@@ -5,6 +5,19 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #3c454e;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #3c454e;;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #3c454e;;
+}
+
 
 /* Firefox */
 input[type=number] {
@@ -86,6 +99,7 @@ body {
   margin-right: 5%;
   border: none;
   box-sizing:border-box;
+  text-align: center; 
 }
 
 .note-heal {
