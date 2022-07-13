@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     id: Math.floor(Math.random() * 100000),
     "monsterName": "Demogorgon",
     "monsterCurrentHealth": "265",
-    "monsterMaxHealth": "350  ",
+    "monsterMaxHealth": "350",
     "monsterGeneralNotes": "Stranger Things reference!"
   };
 
