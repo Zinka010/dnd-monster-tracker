@@ -122,7 +122,7 @@ function createNoteElement(id, noteObject) {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("note-delete-icon");
     const deleteIcon = document.createElement("img");
-    deleteIcon.src = "/src/resources/trash.svg";
+    deleteIcon.src = "./src/resources/trash.svg";
     deleteButton.appendChild(deleteIcon);
 
     deleteButtonWrapper.appendChild(deleteButton);
