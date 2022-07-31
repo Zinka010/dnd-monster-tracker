@@ -11,7 +11,8 @@ class AddNoteButton extends React.Component {
             <div className='add-note-container'>
                 <button className='add-note'
                         type="button"
-                        onClick={this.handleClick}>+</button>
+                        onClick={() => {return <h1> Justin</h1>}}  
+                        >+</button>
             </div>
         );
     }
