@@ -12,3 +12,5 @@ Install install nodejs and npm for your respective OS.
 
 1. Run `npm install`
 2. Run `npm start`
+
+If you would like to suggest any changes or features, please add them as issues, or if you are so inclined, create a PR with the change from a fork.
