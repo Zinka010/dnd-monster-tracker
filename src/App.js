@@ -10,10 +10,10 @@ function App() {
     const addMonster = () => {
         setMonsters(current => 
             [
+                ...current,
                 {
                     id: Math.floor(Math.random() * 1000000), 
-                }, 
-                ...current
+                }
             ]);
     }
 
@@ -45,7 +45,6 @@ function App() {
 
     return (
         <div id="app">
-            <AddNoteButton handleClick={addMonster}/>
             {monsters.map(monster => 
                 <Note key={monster.id} 
                       monster={monster} 
@@ -53,6 +52,7 @@ function App() {
                       handleUpdate={updateMonster}
                       handleUpdateHealth={updateMonsterCurrentHealth}
                     />)}
+            <AddNoteButton handleClick={addMonster}/>
         </div>
     )
 }
