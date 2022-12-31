@@ -54,7 +54,8 @@ const Note = (props) => {
             <div className="note-text-box-div">
                 <textarea id="monsterName" className="note-monster-title" maxLength="12" defaultValue={props.monster.name} onChange={updateName}></textarea>
                 <input type="number" id="monsterCurrentHealth" className="note-health" defaultValue={props.monster.curHealth} onChange={updateCurrentHealth}></input>
-                <textarea className="note-slash" readOnly="" tabIndex="-1" defaultValue="/"></textarea>
+                {/* We use an input type here so it can be styled the same way as the the other two fields */}
+                <input className="note-slash" tabIndex="-1" value="/" disabled></input>
                 <input type="number" id="monsterMaxHealth" className="note-health" defaultValue={props.monster.maxHealth} onChange={updateMaxHealth}></input>
             </div>
             <div className="note-info-bar">

@@ -13,10 +13,18 @@
     outline: none;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    font-size: 120px;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: background 0.2s;
+    font-size: 120px;
+    
+}
+
+/* Addresses graphical issue apparent on firefox */
+@supports (-moz-appearance:none) {
+    .add-note {
+        padding-bottom: 25%;
+    }
 }
 
 .add-note:hover {
