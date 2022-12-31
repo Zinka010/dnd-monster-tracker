@@ -49,6 +49,7 @@
     background-color: rgba(0, 255, 115, 0.7);
     vertical-align: top;
     box-sizing: border-box;
+    color: black;
 }
 
 .note-damage {
@@ -59,6 +60,7 @@
     vertical-align: top;
     background-color: rgba(255, 4, 4, 0.7);
     border: 1px solid black;
+    color: black;
 }
 
 .note-info-bar {
@@ -79,12 +81,20 @@
 
 .note-slash {
     width: 7%;
+    height: 100%;
     box-sizing: border-box;
     resize: none;
     background-color: rgba(0, 0, 0, 0.07);
     font-size: 24px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+.note-slash:disabled {
+    color: black;
 }
 
 .note-general-text {
@@ -94,6 +104,7 @@
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.07);
     margin-top: 5%;
+    border: 2px solid rgba(0, 0, 0, 0.264);
     font-size: 18px;
 }
 
