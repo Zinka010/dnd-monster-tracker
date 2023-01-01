@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useLocalStorage from './database/UseLocalStorage';
 import './App.css';
 import AddNoteButton from './notes/AddNoteButton';
 import Note from './notes/Note.js'
+import SideMenu from './sidebar/SideMenu'
 
 function App() {
   const [monsters, setMonsters] = useLocalStorage ("monsters", [{ id: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, notes: "Stranger Things!"}]);
@@ -43,16 +44,23 @@ function App() {
         );
     }
 
+    // const [backgroundColor, setBackgroundColor] = useState("#90B1D8")
+    const [backgroundColor, setBackgroundColor] = 
+        useLocalStorage("backgroundColor", "#90B1D8")
+
     return (
-        <div id="app">
-            {monsters.map(monster => 
-                <Note key={monster.id} 
-                      monster={monster} 
-                      handleDelete={deleteMonster} 
-                      handleUpdate={updateMonster}
-                      handleUpdateHealth={updateMonsterCurrentHealth}
-                    />)}
-            <AddNoteButton handleClick={addMonster}/>
+        <div className="container" style={{background:backgroundColor}}>
+            <SideMenu handleUpdateBackground={setBackgroundColor}/>
+            <div id="app">
+                {monsters.map(monster => 
+                    <Note key={monster.id} 
+                        monster={monster} 
+                        handleDelete={deleteMonster} 
+                        handleUpdate={updateMonster}
+                        handleUpdateHealth={updateMonsterCurrentHealth}
+                        />)}
+                <AddNoteButton handleClick={addMonster}/>
+            </div>     
         </div>
     )
 }
