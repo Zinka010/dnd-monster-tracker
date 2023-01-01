@@ -2,13 +2,10 @@ import React, {useState} from "react";
 import './Sidebar.css'
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import SettingsFillIcon from 'remixicon-react/ToolsFillIcon'
-import StickBox from 'react-sticky-box'
 import { ChromePicker } from "react-color";
-
 
 const Sidebar = ({sidebar, handleUpdateBackground}) => {
     const [chromePickerColor, setChromePickerColor] = useState("#37d67a");
-
 
     return (
         <div className={sidebar?"sidebar sidebar--open":"sidebar"}>
