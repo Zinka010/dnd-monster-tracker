@@ -1,4 +1,4 @@
-.note {
+.monster-card {
     height: 400px;
     width: 350px;
     box-sizing: border-box;
@@ -12,14 +12,14 @@
     font-size: 16px;
 }
 
-.note-text-box-div {
+.monster-card-text-box-div {
     height: 10%;
     width: 100%;
     margin-bottom: 3%;
     display: flex;
 }
 
-.note-monster-title {
+.monster-card-monster-title {
     width: 60%;
     resize: none;
     background-color: rgba(0, 0, 0, 0.07);
@@ -28,7 +28,7 @@
     font-size: 24px;
 }
 
-.note-health-points {
+.monster-card-health-points {
     height: 100%;
     width: 50%;
     font-size: 24px;
@@ -41,7 +41,7 @@
     text-align: center;
 }
 
-.note-heal {
+.monster-card-heal {
     height: 100%;
     width: 25%;
     font-size: 12px;
@@ -52,7 +52,7 @@
     color: black;
 }
 
-.note-damage {
+.monster-card-damage {
     box-sizing: border-box;
     height: 100%;
     width: 25%;
@@ -63,13 +63,13 @@
     color: black;
 }
 
-.note-info-bar {
+.monster-card-info-bar {
     display: flex;
     height: 10%;
     justify-content: center;
 }
 
-.note-health {
+.monster-card-health {
     width: 17%;
     height: 100%;
     box-sizing: border-box;
@@ -79,7 +79,7 @@
     border: solid black 1px;
 }
 
-.note-slash {
+.monster-card-slash {
     width: 7%;
     height: 100%;
     box-sizing: border-box;
@@ -93,11 +93,11 @@
     text-align: center;
 }
 
-.note-slash:disabled {
+.monster-card-slash:disabled {
     color: black;
 }
 
-.note-general-text {
+.monster-card-general-text {
     height: 65%;
     width: 100%;
     resize: none;
@@ -108,31 +108,31 @@
     font-size: 18px;
 }
 
-.note-delete-icon {
+.monster-card-delete-icon {
     height: 100%;
     background-color: transparent;
     border: none;
 }
 
-.note-trash-wrapper {
+.monster-card-trash-wrapper {
     display: flex;
     height: 10%;
     justify-content: right;
 }
 
-.note-slash:focus {
+.monster-card-slash:focus {
     outline: none;
     box-shadow: none;
 }
 
-.note-heal:hover {
+.monster-card-heal:hover {
     background-color: rgba(0, 0, 0, 0.14);
 }
 
-.note-damage:hover {
+.monster-card-damage:hover {
     background-color: rgba(0, 0, 0, 0.14);
 }
 
-.note-delete-icon:hover {
+.monster-card-delete-icon:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
