@@ -1,15 +1,17 @@
 body {
   margin: 0;
-  background: #b0d5fa;
-  font: Verdana, Arial, sans-serif;
+  background-color: #dbdada;
 }
+
 
 #app {
   display: inline-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   padding: 24px;
-  column-gap: 30px;
+  padding-left: 18px;
+  padding-top: 5px;
+  column-gap: 20px;
   row-gap: 40px; 
 }
 
