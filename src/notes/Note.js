@@ -50,7 +50,7 @@ const Note = (props) => {
     }
 
     return (
-        <div className="note" >
+        <div className="note" style={{background:props.backgroundColor}}>
             <div className="note-text-box-div">
                 <textarea id="monsterName" className="note-monster-title" maxLength="12" defaultValue={props.monster.name} onChange={updateName}></textarea>
                 <input type="number" id="monsterCurrentHealth" className="note-health" defaultValue={props.monster.curHealth} onChange={updateCurrentHealth}></input>

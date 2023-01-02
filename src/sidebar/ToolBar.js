@@ -6,7 +6,7 @@ const ToolBar = ({openSidebar}) => {
     return (
         <div className="tool-bar">
             <div className="burger" onClick={openSidebar}>
-                <MenuLineIcon/>
+                <MenuLineIcon size={30}/>
             </div>
         </div>
     )

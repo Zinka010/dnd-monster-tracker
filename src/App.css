@@ -1,17 +1,16 @@
 body {
   margin: 0;
-  font: Verdana, Arial, sans-serif;
+  background-color: #dbdada;
 }
 
-.container {
-  height: 100%;
-}
 
 #app {
   display: inline-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   padding: 24px;
+  padding-left: 18px;
+  padding-top: 5px;
   column-gap: 20px;
   row-gap: 40px; 
 }
