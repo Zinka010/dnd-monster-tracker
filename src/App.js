@@ -1,8 +1,8 @@
 import React from 'react';
 import useLocalStorage from './database/UseLocalStorage';
 import './App.css';
-import AddNoteButton from './notes/AddNoteButton';
-import Note from './notes/Note.js'
+import AddMonsterCardButton from './monsterCard/AddMonsterCardButton'
+import MonsterCard from './monsterCard/MonsterCard.js'
 import SideMenu from './sidebar/SideMenu'
 
 function App() {
@@ -37,7 +37,11 @@ function App() {
         setMonsters(
             monsters.map(current => {
                 if (current.id === monsterId) {
-                    return {id: Math.floor(Math.random() * 1000000), name: current.name, maxHealth: current.maxHealth, curHealth: monsterCurHealth, notes: current.notes};
+                    return {id: Math.floor(Math.random() * 1000000), 
+                            name: current.name, 
+                            maxHealth: current.maxHealth, 
+                            curHealth: monsterCurHealth, 
+                            notes: current.notes};
                 }
                 return current;
             })
@@ -52,14 +56,14 @@ function App() {
             <SideMenu handleUpdateBackground={setNoteBackgroundColor}/>
             <div id="app">
                 {monsters.map(monster => 
-                    <Note key={monster.id} 
+                    <MonsterCard key={monster.id} 
                         monster={monster} 
                         handleDelete={deleteMonster} 
                         handleUpdate={updateMonster}
                         handleUpdateHealth={updateMonsterCurrentHealth}
                         backgroundColor={noteBackgroundColor}
                         />)}
-                <AddNoteButton handleClick={addMonster}/>
+                <AddMonsterCardButton handleClick={addMonster}/>
             </div>     
         </div>
     )

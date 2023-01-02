@@ -1,4 +1,4 @@
-.add-note-container {
+.add-monster-card-container {
     height: 400px;
     width: 350px;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.add-note {
+.add-monster-card {
     height: 150px;
     width: 150px;
     border: none;
@@ -22,11 +22,11 @@
 
 /* Addresses graphical issue apparent on firefox */
 @supports (-moz-appearance:none) {
-    .add-note {
+    .add-monster-card {
         padding-bottom: 25%;
     }
 }
 
-.add-note:hover {
+.add-monster-card:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
