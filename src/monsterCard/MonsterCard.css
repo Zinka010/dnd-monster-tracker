@@ -28,6 +28,37 @@
     font-size: 24px;
 }
 
+.monster-card-armor-class {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.monster-card-shield {
+    /* margin-right: 3%;
+    margin-left: 13.7%; */
+}
+
+.monster-card-armor-class-input {
+    height: 100%;
+    width: 44.5%;
+    font-size: 24px;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.07);
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
+    /* width: 30%;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.07);
+    margin-left: 2%;
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center; */
+}
+
 .monster-card-health-points {
     height: 100%;
     width: 50%;
@@ -67,6 +98,7 @@
     display: flex;
     height: 10%;
     justify-content: center;
+    margin-bottom: 3%;
 }
 
 .monster-card-health {
@@ -98,7 +130,7 @@
 }
 
 .monster-card-general-text {
-    height: 65%;
+    height: 55%;
     width: 100%;
     resize: none;
     box-sizing: border-box;
