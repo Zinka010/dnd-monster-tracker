@@ -1,13 +1,19 @@
 import React from 'react';
 import './AddMonsterCardButton.css'
+import AddFillIcon from 'remixicon-react/AddFillIcon'
 
 function AddMonsterCardButton({handleClick}) {
     return (
         <div className='add-monster-card-container'>
-            <button className='add-monster-card'
-                    type="button"
-                    onClick={handleClick}
-                    >+</button>
+            <div 
+                className='add-monster-card'
+                onClick={handleClick}>
+
+                <AddFillIcon 
+                    className='add-monster-card-plus-icon'>
+
+                </AddFillIcon>
+            </div>
         </div>
     );
     
