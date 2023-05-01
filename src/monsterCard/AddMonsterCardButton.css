@@ -6,9 +6,17 @@
     align-items: center;
 }
 
+.add-monster-card-plus-icon {
+    width: 130px;
+    height: 130px;
+}
+
 .add-monster-card {
-    height: 150px;
-    width: 150px;
+    height: 175px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     outline: none;
     background: rgba(0, 0, 0, 0.1);
@@ -16,15 +24,6 @@
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: background 0.2s;
-    font-size: 120px;
-    
-}
-
-/* Addresses graphical issue apparent on firefox */
-@supports (-moz-appearance:none) {
-    .add-monster-card {
-        padding-bottom: 25%;
-    }
 }
 
 .add-monster-card:hover {
