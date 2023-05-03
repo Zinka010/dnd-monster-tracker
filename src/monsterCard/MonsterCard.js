@@ -14,19 +14,19 @@ const MonsterCard = (props) => {
     const updateCurrentHealth = (event) => {
         props.handleUpdate(props.monster.id, props.monster.name, 
             event.target.value, props.monster.maxHealth,  props.monster.ac,
-            props.monster.notes);
+            props.monster.initiative, props.monster.notes);
     }
 
     const updateMaxHealth = (event) => {
         props.handleUpdate(props.monster.id, props.monster.name, 
             props.monster.curHealth, event.target.value,  props.monster.ac,
-            props.monster.notes);
+            props.monster.initiative, props.monster.notes);
     }
 
     const updateNotes = (event) => {
         props.handleUpdate(props.monster.id, props.monster.name, 
             props.monster.curHealth, props.monster.maxHealth, props.monster.ac,
-            event.target.value);
+            props.monster.initiative, event.target.value);
     }
 
     const updateChangeAmount = (event) => {
@@ -41,7 +41,13 @@ const MonsterCard = (props) => {
     const updateAc = (event) => {
         props.handleUpdate(props.monster.id, props.monster.name, 
             props.monster.curHealth, props.monster.maxHealth, event.target.value,
-            props.monster.notes);
+            props.monster.initiative, props.monster.notes);
+    }
+
+    const updateInitiative = (event) => {
+        props.handleUpdate(props.monster.id, props.monster.name, 
+            props.monster.curHealth, props.monster.maxHealth, props.monster.ac,
+            event.target.value, props.monster.notes);
     }
 
     const curHealthInt = () => {
@@ -79,6 +85,7 @@ const MonsterCard = (props) => {
             </div>
             <div className="monster-card-armor-class">
                 <input className="monster-card-armor-class-input" placeholder="AC" maxLength="2" defaultValue={props.monster.ac} onChange={updateAc}></input>
+                <input className="monster-card-initiative-input" placeholder="Initiative" maxLength="2" defaultValue={props.monster.initiative} onChange={updateInitiative}></input>
             </div>
             <textarea className="monster-card-general-text" id="monsterGeneralNotes" defaultValue={props.monster.notes} onChange={updateNotes}></textarea>
             <div className="monster-card-trash-wrapper">

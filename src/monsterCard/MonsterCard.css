@@ -43,13 +43,14 @@
 
 .monster-card-armor-class-input {
     height: 100%;
-    width: 44.5%;
+    width: 50%;
     font-size: 24px;
     resize: none;
     background-color: rgba(0, 0, 0, 0.07);
     border: none;
     box-sizing: border-box;
     text-align: center;
+    margin-right: 2%;
     /* width: 30%;
     resize: none;
     background-color: rgba(0, 0, 0, 0.07);
@@ -57,6 +58,17 @@
     border: 1px solid black;
     font-size: 24px;
     text-align: center; */
+}
+
+.monster-card-initiative-input {
+    height: 100%;
+    width: 50%;
+    font-size: 24px;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.07);
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .monster-card-health-points {

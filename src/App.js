@@ -6,7 +6,7 @@ import MonsterCard from './monsterCard/MonsterCard.js'
 import SideMenu from './sidebar/SideMenu'
 
 function App() {
-  const [monsters, setMonsters] = useLocalStorage ("monsters", [{ id: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, notes: "Stranger Things!"}]);
+  const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);
 
     const addMonster = () => {
         setMonsters(current => 
@@ -24,14 +24,15 @@ function App() {
 
     const updateMonster = (monsterId, monsterName, 
                            monsterCurHealth, monsterMaxHealth, 
-                           monsterAc, monsterNotes) => {
+                           monsterAc, monsterInitiative, monsterNotes) => {
         setMonsters(
             monsters.map(current => {
                 if (current.id === monsterId) {
                     return {id: monsterId, name: monsterName, 
                             maxHealth: monsterMaxHealth, 
                             curHealth: monsterCurHealth,
-                            ac: monsterAc, notes: monsterNotes};
+                            ac: monsterAc, initiative:monsterInitiative,
+                            notes: monsterNotes};
                 }
                 return current;
             })
