@@ -14,6 +14,7 @@ function App() {
                 ...current,
                 {
                     id: Math.floor(Math.random() * 1000000), 
+                    curHealth: 0
                 }
             ]);
     }
