@@ -30,11 +30,16 @@ const MonsterCard = (props) => {
     }
 
     const updateChangeAmount = (event) => {
-        
         if (event.target.value === "") {
             setChangeAmount(0);
         } else {
-            setChangeAmount(parseInt(event.target.value));
+            let diff = parseInt(event.target.value);
+
+            if (isNaN(diff)) {
+                diff = 0;
+            }
+
+            setChangeAmount(diff);
         }
     }
 
@@ -52,7 +57,10 @@ const MonsterCard = (props) => {
 
     const curHealthInt = () => {
         if (props.monster.curHealth !== "") {
-            return parseInt(props.monster.curHealth);
+            const curHealth =  parseInt(props.monster.curHealth);
+            if (!isNaN(curHealth)) {
+                return curHealth;
+            }
         }
         return 0;
     }
