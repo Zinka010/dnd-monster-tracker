@@ -36,11 +36,6 @@
     justify-content: center;
 }
 
-.monster-card-shield {
-    /* margin-right: 3%;
-    margin-left: 13.7%; */
-}
-
 .monster-card-armor-class-input {
     height: 100%;
     width: 50%;
@@ -51,13 +46,6 @@
     box-sizing: border-box;
     text-align: center;
     margin-right: 2%;
-    /* width: 30%;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    margin-left: 2%;
-    border: 1px solid black;
-    font-size: 24px;
-    text-align: center; */
 }
 
 .monster-card-initiative-input {
