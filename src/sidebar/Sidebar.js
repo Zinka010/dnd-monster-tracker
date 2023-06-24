@@ -3,6 +3,7 @@ import './Sidebar.css'
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import SettingsFillIcon from 'remixicon-react/ToolsFillIcon'
 import { TwitterPicker } from "react-color";
+import { Slider } from '@mui/material'
 
 const Sidebar = ({sidebar, handleUpdateBackground}) => {
     const [chromePickerColor, setChromePickerColor] = useState("#8ED1FC");
@@ -26,6 +27,12 @@ const Sidebar = ({sidebar, handleUpdateBackground}) => {
                         setChromePickerColor(color.hex)
                         handleUpdateBackground(color.hex)
                     }}/>
+            </div>
+            <div className="monster-card-background-color-title-container">
+                <div className="monster-card-background-color-title">Monster Card Font Size</div>
+            </div>
+            <div className="font-slider-container">
+                <Slider defaultValue={30} aria-label="Font Size Slider" color="secondary" />
             </div>
             
             <li className="clickable-sidebar-li" onClick={() => window.open('https://github.com/Zinka010/dnd-monster-tracker','_blank')}>

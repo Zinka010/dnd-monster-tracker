@@ -65,3 +65,15 @@
     padding-top: 10px;
 }
 
+.font-slider-container {
+    /* display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 310px;
+    padding-bottom: 25px;
+    padding-top: 10px; */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+}
+
