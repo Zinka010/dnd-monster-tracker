@@ -14,3 +14,14 @@ Install install nodejs and npm for your respective OS.
 2. Run `npm start`
 
 If you would like to suggest any changes or features, please add them as issues, or if you are so inclined, create a PR with the change from a fork.
+
+### To build and push the docker container
+
+```
+docker buildx build --platform linux/amd64 \
+    -t jtoft/dnd-monster-tracker:X.X.X \
+    -f Dockerfile \
+    --push \
+    --no-cache \
+    .
+```
