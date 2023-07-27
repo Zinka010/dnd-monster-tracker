@@ -32,7 +32,8 @@ function App() {
                     return {id: monsterId, name: monsterName, 
                             maxHealth: monsterMaxHealth, 
                             curHealth: monsterCurHealth,
-                            ac: monsterAc, initiative:monsterInitiative,
+                            ac: monsterAc, 
+                            initiative: monsterInitiative,
                             notes: monsterNotes};
                 }
                 return current;
@@ -49,6 +50,7 @@ function App() {
                             maxHealth: current.maxHealth, 
                             curHealth: monsterCurHealth, 
                             ac: current.ac,
+                            initiative: current.initiative,
                             notes: current.notes};
                 }
                 return current;
