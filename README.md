@@ -19,7 +19,7 @@ If you would like to suggest any changes or features, please add them as issues,
 
 ```
 docker buildx build --platform linux/amd64 \
-    -t jtoft/dnd-monster-tracker:X.X.X \
+    -t {docker_user_id}/dnd-monster-tracker:X.X.X \
     -f Dockerfile \
     --push \
     --no-cache \
