@@ -4,6 +4,9 @@ import './App.css';
 import AddMonsterCardButton from './monsterCard/AddMonsterCardButton'
 import MonsterCard from './monsterCard/MonsterCard.js'
 import SideMenu from './sidebar/SideMenu'
+import EncounterSelector from './topbar/encounterSelector';
+import { Select } from "@chakra-ui/select"
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);
@@ -62,20 +65,25 @@ function App() {
         useLocalStorage("backgroundColor", "#8ED1FC")
 
     return (
-        <div className="container" >
-            <SideMenu handleUpdateBackground={setNoteBackgroundColor}/>
-            <div id="app">
-                {monsters.map(monster => 
-                    <MonsterCard key={monster.id} 
-                        monster={monster} 
-                        handleDelete={deleteMonster} 
-                        handleUpdate={updateMonster}
-                        handleUpdateHealth={updateMonsterCurrentHealth}
-                        backgroundColor={noteBackgroundColor}
-                        />)}
-                <AddMonsterCardButton handleClick={addMonster}/>
-            </div>     
-        </div>
+        <ChakraProvider>
+            <div>
+                <div className='header'>
+                    <SideMenu handleUpdateBackground={setNoteBackgroundColor}/>
+                    <EncounterSelector />
+                </div>
+                <div id="app">
+                    {monsters.map(monster => 
+                        <MonsterCard key={monster.id} 
+                            monster={monster} 
+                            handleDelete={deleteMonster} 
+                            handleUpdate={updateMonster}
+                            handleUpdateHealth={updateMonsterCurrentHealth}
+                            backgroundColor={noteBackgroundColor}
+                            />)}
+                    <AddMonsterCardButton handleClick={addMonster}/>
+                </div>     
+            </div>
+        </ChakraProvider>
     )
 }
 

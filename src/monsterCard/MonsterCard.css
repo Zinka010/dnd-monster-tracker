@@ -109,6 +109,7 @@
     background-color: rgba(0, 0, 0, 0.07);
     font-size: 24px;
     border: solid black 1px;
+    text-align: center;
 }
 
 .monster-card-slash {
