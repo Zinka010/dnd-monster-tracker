@@ -5,8 +5,7 @@ import AddMonsterCardButton from './monsterCard/AddMonsterCardButton'
 import MonsterCard from './monsterCard/MonsterCard.js'
 import SideMenu from './sidebar/SideMenu'
 import EncounterSelector from './topbar/encounterSelector';
-import { Select } from "@chakra-ui/select"
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Button } from '@chakra-ui/react'
 
 function App() {
   const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);

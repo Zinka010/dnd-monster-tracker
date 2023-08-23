@@ -3,6 +3,7 @@ import './Sidebar.css'
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import SettingsFillIcon from 'remixicon-react/ToolsFillIcon'
 import { TwitterPicker } from "react-color";
+import { Button } from '@chakra-ui/react'
 
 const Sidebar = ({sidebar, handleUpdateBackground}) => {
     const [chromePickerColor, setChromePickerColor] = useState("#8ED1FC");
@@ -31,6 +32,12 @@ const Sidebar = ({sidebar, handleUpdateBackground}) => {
             <li className="clickable-sidebar-li" onClick={() => window.open('https://github.com/Zinka010/dnd-monster-tracker','_blank')}>
                 <GithubFillIcon className="sidebar-item-icon"/> 
                 GitHub
+            </li>
+
+            <li>
+                <Button size='md' colorScheme='red'>
+                            Delete Current Encounter
+                        </Button>
             </li>
             
             <h5 className="author-note">Created with love by Justin Toft</h5>
