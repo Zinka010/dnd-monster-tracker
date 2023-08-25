@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useLocalStorage from './database/UseLocalStorage';
 import './App.css';
 import AddMonsterCardButton from './monsterCard/AddMonsterCardButton'
@@ -78,12 +78,14 @@ function App() {
     const [selectedEncounterId, setSelectedEncounterId] = 
         useLocalStorage("selectedEncounterId", {id: 1})
 
-    // Not yet working
     const deleteSelectedEncounter = () => {
         console.log('deleteSelectedEncounter')
-        if (encounters.length > 0) {
-            setEncounters(encounters.filter(cur => cur.id !== selectedEncounterId.id));
-            setSelectedEncounterId(encounters[0].id);
+        if (encounters.length > 1) {
+            setEncounters(encounters.filter((curEncounter) => {
+                    return curEncounter.id !== parseInt(selectedEncounterId.id)
+                }))
+
+            setSelectedEncounterId({id: encounters[0].id});
         }
     }
 

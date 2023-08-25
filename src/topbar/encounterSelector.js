@@ -9,6 +9,7 @@ import './encounterSelector.css'
 
 
 const EncounterSelector = ({encounters, addEncounter, selectedEncounterId, setSelectedEncounterId}) => {
+    
     const handleClick = () => {
         console.log('Button Clicked');
         // console.log(encounters)
@@ -41,13 +42,12 @@ const EncounterSelector = ({encounters, addEncounter, selectedEncounterId, setSe
             <div>
                 <Select 
                     width='15rem'
+                    id='encounterSelectorDropdown'
                     onChange={event => {
-                            console.log(event.target.value)
                             setSelectedEncounterId({id: event.target.value})
-                            console.log(selectedEncounterId.id)
                         }}
 
-                    defaultValue={selectedEncounterId.id}
+                    value={selectedEncounterId.id}
                     >
                     {encounters.map(encouter => 
                         <option key={encouter.id} 
