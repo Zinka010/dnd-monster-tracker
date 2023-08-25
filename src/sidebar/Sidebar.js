@@ -5,8 +5,12 @@ import SettingsFillIcon from 'remixicon-react/ToolsFillIcon'
 import { TwitterPicker } from "react-color";
 import { Button } from '@chakra-ui/react'
 
-const Sidebar = ({sidebar, handleUpdateBackground}) => {
+const Sidebar = ({sidebar, handleUpdateBackground, deleteSelectedEncounter}) => {
     const [chromePickerColor, setChromePickerColor] = useState("#8ED1FC");
+
+    const handleClick = () => {
+        deleteSelectedEncounter();
+    }
 
     return (
         <div className={sidebar?"sidebar sidebar--open":"sidebar"}>
@@ -35,7 +39,7 @@ const Sidebar = ({sidebar, handleUpdateBackground}) => {
             </li>
 
             <li>
-                <Button size='md' colorScheme='red'>
+                <Button size='md' colorScheme='red' onClick={handleClick}>
                             Delete Current Encounter
                         </Button>
             </li>

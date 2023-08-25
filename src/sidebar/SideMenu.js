@@ -6,7 +6,7 @@ import Backdrop from "./Backdrop";
 import Sidebar from "./Sidebar";
 
 
-const SideMenu = ({handleUpdateBackground}) => {
+const SideMenu = ({handleUpdateBackground, deleteSelectedEncounter}) => {
     const [sidebar, setSidebar] = useState(false);
 
     const toggleSidebar = () => {
@@ -17,7 +17,10 @@ const SideMenu = ({handleUpdateBackground}) => {
         <div className="side-menu">
             <ToolBar openSidebar={toggleSidebar} />
             <Backdrop sidebar={sidebar} closeSidebar={toggleSidebar}/>
-            <Sidebar sidebar={sidebar} handleUpdateBackground={handleUpdateBackground}/>
+            <Sidebar 
+                sidebar={sidebar} 
+                handleUpdateBackground={handleUpdateBackground}
+                deleteSelectedEncounter={deleteSelectedEncounter}/>
         </div>
     )
 }
