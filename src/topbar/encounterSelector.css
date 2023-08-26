@@ -1,0 +1,15 @@
+.encounterSelector {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: auto;
+}
+
+.encounterSelectorDropdown {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.encounterSelectorInputContainer {
+    padding-right: 5px;
+}
