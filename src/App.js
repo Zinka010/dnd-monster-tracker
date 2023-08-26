@@ -5,7 +5,7 @@ import AddMonsterCardButton from './monsterCard/AddMonsterCardButton'
 import MonsterCard from './monsterCard/MonsterCard.js'
 import SideMenu from './sidebar/SideMenu'
 import EncounterSelector from './topbar/encounterSelector';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Button } from '@chakra-ui/react'
 
 function App() {
   const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, encounterId: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);
@@ -62,6 +62,46 @@ function App() {
         );
     }
 
+    // Untested
+    // (monsterA, monsterB) => {
+    //     if (monsterA.encounterId !== selectedEncounterId.id) {
+    //         return 1;
+    //     } else if (monsterB.encounterId !== selectedEncounterId.id) {
+    //         return -1;
+    //     } else {
+    //         return monsterA.initiative - monsterB.initiative;
+    //     }
+    // }
+    const sortMonstersInSelectedEncounter = () => {
+        console.log('sorting monsters')
+        console.log(monsters)
+        var newMonsters = monsters.sort(
+            (monsterA, monsterB) => {
+                if (monsterA.initiative < monsterB.initiative) {
+                    return 1;
+                } else if (monsterA.initiative > monsterB.initiative) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        );
+
+        console.log(newMonsters);
+        
+        setMonsters(monsters.sort(
+            (monsterA, monsterB) => {
+                if (monsterA.initiative < monsterB.initiative) {
+                    return 1;
+                } else if (monsterA.initiative > monsterB.initiative) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        ))
+    }
+
     const [noteBackgroundColor, setNoteBackgroundColor] = 
         useLocalStorage("backgroundColor", "#8ED1FC")
 
@@ -100,6 +140,12 @@ function App() {
                         handleUpdateBackground={setNoteBackgroundColor}
                         deleteSelectedEncounter={deleteSelectedEncounter}
                         />
+                    <div className='sortInitiativeButton'>
+                        <Button 
+                            colorScheme='gray'
+                            onClick={sortMonstersInSelectedEncounter}
+                        >Sort by Initiative</Button>
+                    </div>
                     <EncounterSelector 
                         encounters={encounters} 
                         addEncounter={addEncounter} 

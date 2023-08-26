@@ -23,6 +23,10 @@ body {
   padding-bottom: 10px;
 }
 
+.sortInitiativeButton {
+  padding-left: 10px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
