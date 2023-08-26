@@ -8,13 +8,14 @@ import EncounterSelector from './topbar/encounterSelector';
 import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
-  const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);
+  const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, encounterId: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);
     const addMonster = () => {
         setMonsters(current => 
             [
                 ...current,
                 {
                     id: Math.floor(Math.random() * 1000000), 
+                    encounterId: selectedEncounterId.id,
                     curHealth: 0
                 }
             ]);
@@ -31,6 +32,7 @@ function App() {
             monsters.map(current => {
                 if (current.id === monsterId) {
                     return {id: monsterId, name: monsterName, 
+                            encounterId: current.encounterId,
                             maxHealth: monsterMaxHealth, 
                             curHealth: monsterCurHealth,
                             ac: monsterAc, 
@@ -46,7 +48,8 @@ function App() {
         setMonsters(
             monsters.map(current => {
                 if (current.id === monsterId) {
-                    return {id: Math.floor(Math.random() * 1000000), 
+                    return {id: Math.floor(Math.random() * 1000000),
+                            encounterId: current.encounterId,
                             name: current.name, 
                             maxHealth: current.maxHealth, 
                             curHealth: monsterCurHealth, 
@@ -105,14 +108,16 @@ function App() {
                         />
                 </div>
                 <div id="app">
-                    {monsters.map(monster => 
-                        <MonsterCard key={monster.id} 
-                            monster={monster} 
-                            handleDelete={deleteMonster} 
-                            handleUpdate={updateMonster}
-                            handleUpdateHealth={updateMonsterCurrentHealth}
-                            backgroundColor={noteBackgroundColor}
-                            />)}
+                    {monsters.filter(monster => monster.encounterId === selectedEncounterId.id)
+                        .map(monster => 
+                            <MonsterCard key={monster.id} 
+                                monster={monster} 
+                                handleDelete={deleteMonster} 
+                                handleUpdate={updateMonster}
+                                handleUpdateHealth={updateMonsterCurrentHealth}
+                                backgroundColor={noteBackgroundColor}
+                                />)
+                            }
                     <AddMonsterCardButton handleClick={addMonster}/>
                 </div>     
             </div>

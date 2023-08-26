@@ -12,7 +12,6 @@ const EncounterSelector = ({encounters, addEncounter, selectedEncounterId, setSe
     
     const handleClick = () => {
         console.log('Button Clicked');
-        // console.log(encounters)
         var text = document.getElementById('encounterNameInput').value;
         console.log(text)
         if (text) {
