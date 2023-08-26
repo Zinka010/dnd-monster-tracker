@@ -62,44 +62,6 @@ function App() {
         );
     }
 
-    // Untested
-    // (monsterA, monsterB) => {
-    //     if (monsterA.encounterId !== selectedEncounterId.id) {
-    //         return 1;
-    //     } else if (monsterB.encounterId !== selectedEncounterId.id) {
-    //         return -1;
-    //     } else {
-    //         return monsterA.initiative - monsterB.initiative;
-    //     }
-    // }
-    // const sortMonstersInSelectedEncounter = () => {
-    //     console.log('sorting monsters')
-        
-    //     var newMonsters = monsters.sort(
-    //         (monsterA, monsterB) => {
-    //             return parseInt(monsterB.initiative) - parseInt(monsterA.initiative);
-    //         }
-    //     );
-
-    //     // console.log(newMonsters);
-
-    //     // (monsterA, monsterB) => {
-    //     //     if (monsterA.initiative < monsterB.initiative) {
-    //     //         return 1;
-    //     //     } else if (monsterA.initiative > monsterB.initiative) {
-    //     //         return -1;
-    //     //     } else {
-    //     //         return 0;
-    //     //     }
-    //     // }
-
-    //     setMonsters(
-    //         monsters.reverse()
-    //     );
-
-    //     console.log(monsters)
-    // }
-
     const [noteBackgroundColor, setNoteBackgroundColor] = 
         useLocalStorage("backgroundColor", "#8ED1FC")
 
