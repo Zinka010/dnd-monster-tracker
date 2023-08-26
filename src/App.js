@@ -5,7 +5,7 @@ import AddMonsterCardButton from './monsterCard/AddMonsterCardButton'
 import MonsterCard from './monsterCard/MonsterCard.js'
 import SideMenu from './sidebar/SideMenu'
 import EncounterSelector from './topbar/encounterSelector';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Checkbox } from '@chakra-ui/react'
 
 function App() {
   const [monsters, setMonsters] = useLocalStorage("monsters", [{ id: 1, encounterId: 1, name: 'Demogorgon', maxHealth: 300, curHealth: 175, ac: 22, initiative: 18, notes: "Stranger Things!"}]);
@@ -15,7 +15,7 @@ function App() {
                 ...current,
                 {
                     id: Math.floor(Math.random() * 1000000), 
-                    encounterId: selectedEncounterId.id,
+                    encounterId: parseInt(selectedEncounterId.id),
                     curHealth: 0
                 }
             ]);
@@ -84,13 +84,21 @@ function App() {
     const deleteSelectedEncounter = () => {
         console.log('deleteSelectedEncounter')
         if (encounters.length > 1) {
+            // Delete monsters in that encounter
+            setMonsters(monsters.filter((curMonster) => {
+                return parseInt(curMonster.encounterId) !== parseInt(selectedEncounterId.id)
+            }))
+
             setEncounters(encounters.filter((curEncounter) => {
-                    return curEncounter.id !== parseInt(selectedEncounterId.id)
+                    return parseInt(curEncounter.id) !== parseInt(selectedEncounterId.id)
                 }))
 
             setSelectedEncounterId({id: encounters[0].id});
         }
     }
+
+    const [isSortedByInitiative, setIsSortedByInitiative] = 
+        useLocalStorage("selectedEncounterId", {sorted: false})
 
     return (
         <ChakraProvider>
@@ -100,6 +108,14 @@ function App() {
                         handleUpdateBackground={setNoteBackgroundColor}
                         deleteSelectedEncounter={deleteSelectedEncounter}
                         />
+                    <div className='sortInitiativeButton'>
+                        <Checkbox 
+                            colorScheme='gray'
+                            onChange={() => {
+                                setIsSortedByInitiative({sorted: !isSortedByInitiative.sorted});
+                            }}
+                        >Sort by Initiative</Checkbox>
+                    </div>
                     <EncounterSelector 
                         encounters={encounters} 
                         addEncounter={addEncounter} 
@@ -108,7 +124,14 @@ function App() {
                         />
                 </div>
                 <div id="app">
-                    {monsters.filter(monster => monster.encounterId === selectedEncounterId.id)
+                    {monsters.filter(monster => parseInt(monster.encounterId) === parseInt(selectedEncounterId.id))
+                        .sort((monsterA, monsterB) => {
+                            if (isSortedByInitiative.sorted) {
+                                return monsterB.initiative - monsterA.initiative;
+                            } else {
+                                return 0;
+                            }
+                        })
                         .map(monster => 
                             <MonsterCard key={monster.id} 
                                 monster={monster} 
