@@ -25,3 +25,8 @@ docker buildx build --platform linux/amd64 \
     --no-cache \
     .
 ```
+
+### To run locally
+```
+docker run -p 8080:80 -d {docker_user_id}/dnd-monster-tracker:X.X.X
+```
