@@ -98,7 +98,7 @@ function App() {
     }
 
     const [isSortedByInitiative, setIsSortedByInitiative] = 
-        useLocalStorage("selectedEncounterId", {sorted: false})
+        useLocalStorage("sortedByInitiative", {sorted: false})
 
     return (
         <ChakraProvider>
