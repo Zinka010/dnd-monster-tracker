@@ -15,6 +15,9 @@ Install install nodejs and npm for your respective OS.
 
 If you would like to suggest any changes or features, please add them as issues, or if you are so inclined, create a PR with the change from a fork.
 
+### Run Tests
+1. Run `npm test`
+
 ### To build and push the docker container
 
 ```
