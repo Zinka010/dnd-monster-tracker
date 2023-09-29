@@ -6,6 +6,8 @@ We have just release our 2.2.0 version here: https://dnd-monster-tracker-jtoft.k
 
 To run locally, deploy the latest docker image from docker hub here https://hub.docker.com/repository/docker/jtoft/dnd-monster-tracker
 
+![test results](https://github.com/Zinka010/dnd-monster-tracker/blob/main/.github/workflows/node.js.yml/badge.svg)
+
 ## Dev Guide
 
 Install install nodejs and npm for your respective OS.
