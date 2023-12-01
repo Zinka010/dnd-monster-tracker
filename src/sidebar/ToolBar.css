@@ -1,9 +1,9 @@
 .tool-bar {
-    color: black;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-top: 7px;
-    padding-left: 7px;
-    padding-bottom: 7px;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 7px;
+  padding-left: 7px;
+  padding-bottom: 7px;
 }

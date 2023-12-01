@@ -11,7 +11,7 @@ body {
   padding-left: 18px;
   padding-top: 5px;
   column-gap: 20px;
-  row-gap: 40px; 
+  row-gap: 40px;
 }
 
 .header {
@@ -28,30 +28,33 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #3c454e;
-    opacity: 1; /* Firefox */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #3c454e;
+  opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #3c454e;;
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #3c454e;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-    color: #3c454e;;
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #3c454e;
 }

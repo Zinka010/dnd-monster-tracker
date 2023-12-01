@@ -16,6 +16,7 @@ Install install nodejs and npm for your respective OS.
 If you would like to suggest any changes or features, please add them as issues, or if you are so inclined, create a PR with the change from a fork.
 
 ### Run Tests
+
 1. Run `npm test`
 
 ### To build and push the docker container
@@ -30,6 +31,7 @@ docker buildx build --platform linux/amd64 \
 ```
 
 ### To run locally
+
 ```
 docker run -p 8080:80 -d {docker_user_id}/dnd-monster-tracker:X.X.X
 ```

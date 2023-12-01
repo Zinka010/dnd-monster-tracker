@@ -1,171 +1,171 @@
 .monster-card {
-    height: 400px;
-    width: 350px;
-    box-sizing: border-box;
-    padding: 16px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-    background-color: #8ED1FC;
-    resize: none;
-    font-family: sans-serif;
-    font-size: 16px;
+  height: 400px;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  background-color: #8ed1fc;
+  resize: none;
+  font-family: sans-serif;
+  font-size: 16px;
 }
 
 .monster-card-text-box-div {
-    height: 10%;
-    width: 100%;
-    margin-bottom: 3%;
-    display: flex;
+  height: 10%;
+  width: 100%;
+  margin-bottom: 3%;
+  display: flex;
 }
 
 .monster-card-monster-title {
-    width: 60%;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    margin-right: 2%;
-    border: 1px solid black;
-    font-size: 24px;
+  width: 60%;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  margin-right: 2%;
+  border: 1px solid black;
+  font-size: 24px;
 }
 
 .monster-card-armor-class {
-    height: 10%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .monster-card-armor-class-input {
-    height: 100%;
-    width: 50%;
-    font-size: 24px;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    border: none;
-    box-sizing: border-box;
-    text-align: center;
-    margin-right: 2%;
+  height: 100%;
+  width: 50%;
+  font-size: 24px;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+  margin-right: 2%;
 }
 
 .monster-card-initiative-input {
-    height: 100%;
-    width: 50%;
-    font-size: 24px;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    border: none;
-    box-sizing: border-box;
-    text-align: center;
+  height: 100%;
+  width: 50%;
+  font-size: 24px;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .monster-card-health-points {
-    height: 100%;
-    width: 50%;
-    font-size: 24px;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    margin-left: 5%;
-    margin-right: 5%;
-    border: none;
-    box-sizing: border-box;
-    text-align: center;
+  height: 100%;
+  width: 50%;
+  font-size: 24px;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  margin-left: 5%;
+  margin-right: 5%;
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .monster-card-heal {
-    height: 100%;
-    width: 25%;
-    font-size: 12px;
-    border: 1px solid black;
-    background-color: rgba(0, 255, 115, 0.7);
-    vertical-align: top;
-    box-sizing: border-box;
-    color: black;
+  height: 100%;
+  width: 25%;
+  font-size: 12px;
+  border: 1px solid black;
+  background-color: rgba(0, 255, 115, 0.7);
+  vertical-align: top;
+  box-sizing: border-box;
+  color: black;
 }
 
 .monster-card-damage {
-    box-sizing: border-box;
-    height: 100%;
-    width: 25%;
-    font-size: 12px;
-    vertical-align: top;
-    background-color: rgba(255, 4, 4, 0.7);
-    border: 1px solid black;
-    color: black;
+  box-sizing: border-box;
+  height: 100%;
+  width: 25%;
+  font-size: 12px;
+  vertical-align: top;
+  background-color: rgba(255, 4, 4, 0.7);
+  border: 1px solid black;
+  color: black;
 }
 
 .monster-card-info-bar {
-    display: flex;
-    height: 10%;
-    justify-content: center;
-    margin-bottom: 3%;
+  display: flex;
+  height: 10%;
+  justify-content: center;
+  margin-bottom: 3%;
 }
 
 .monster-card-health {
-    width: 17%;
-    height: 100%;
-    box-sizing: border-box;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    font-size: 24px;
-    border: solid black 1px;
-    text-align: center;
+  width: 17%;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  font-size: 24px;
+  border: solid black 1px;
+  text-align: center;
 }
 
 .monster-card-slash {
-    width: 7%;
-    height: 100%;
-    box-sizing: border-box;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.07);
-    font-size: 24px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: none;
-    border-right: none;
-    text-align: center;
+  width: 7%;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  font-size: 24px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+  text-align: center;
 }
 
 .monster-card-slash:disabled {
-    color: black;
+  color: black;
 }
 
 .monster-card-general-text {
-    height: 55%;
-    width: 100%;
-    resize: none;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.07);
-    margin-top: 5%;
-    border: 2px solid rgba(0, 0, 0, 0.264);
-    font-size: 18px;
+  height: 55%;
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.07);
+  margin-top: 5%;
+  border: 2px solid rgba(0, 0, 0, 0.264);
+  font-size: 18px;
 }
 
 .monster-card-delete-icon {
-    height: 100%;
-    background-color: transparent;
-    border: none;
+  height: 100%;
+  background-color: transparent;
+  border: none;
 }
 
 .monster-card-trash-wrapper {
-    display: flex;
-    height: 10%;
-    justify-content: right;
+  display: flex;
+  height: 10%;
+  justify-content: right;
 }
 
 .monster-card-slash:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .monster-card-heal:hover {
-    background-color: rgba(0, 0, 0, 0.14);
+  background-color: rgba(0, 0, 0, 0.14);
 }
 
 .monster-card-damage:hover {
-    background-color: rgba(0, 0, 0, 0.14);
+  background-color: rgba(0, 0, 0, 0.14);
 }
 
 .monster-card-delete-icon:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }

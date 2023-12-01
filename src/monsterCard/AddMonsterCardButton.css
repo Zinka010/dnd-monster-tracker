@@ -1,31 +1,31 @@
 .add-monster-card-container {
-    height: 400px;
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 400px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .add-monster-card-plus-icon {
-    width: 130px;
-    height: 130px;
+  width: 130px;
+  height: 130px;
 }
 
 .add-monster-card {
-    height: 175px;
-    width: 175px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: background 0.2s;
+  height: 175px;
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .add-monster-card:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
