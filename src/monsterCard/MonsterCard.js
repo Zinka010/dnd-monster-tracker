@@ -11,7 +11,7 @@ const MonsterCard = (props) => {
       props.monster.curHealth,
       props.monster.maxHealth,
       props.monster.ac,
-      props.monster.notes,
+      props.monster.notes
     );
   };
 
@@ -23,7 +23,7 @@ const MonsterCard = (props) => {
       props.monster.maxHealth,
       props.monster.ac,
       props.monster.initiative,
-      props.monster.notes,
+      props.monster.notes
     );
   };
 
@@ -35,7 +35,7 @@ const MonsterCard = (props) => {
       event.target.value,
       props.monster.ac,
       props.monster.initiative,
-      props.monster.notes,
+      props.monster.notes
     );
   };
 
@@ -47,7 +47,7 @@ const MonsterCard = (props) => {
       props.monster.maxHealth,
       props.monster.ac,
       props.monster.initiative,
-      event.target.value,
+      event.target.value
     );
   };
 
@@ -73,7 +73,7 @@ const MonsterCard = (props) => {
       props.monster.maxHealth,
       event.target.value,
       props.monster.initiative,
-      props.monster.notes,
+      props.monster.notes
     );
   };
 
@@ -85,7 +85,7 @@ const MonsterCard = (props) => {
       props.monster.maxHealth,
       props.monster.ac,
       event.target.value,
-      props.monster.notes,
+      props.monster.notes
     );
   };
 
